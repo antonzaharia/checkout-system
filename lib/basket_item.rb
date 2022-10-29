@@ -23,6 +23,12 @@ class BasketItem
   end
 
   def half_price
+    if item.discount&.key?(:restrict)
+      discounted = item.discount[:restrict]
+      ((@count - discounted) * @item.price ) + ((discounted * @item.price) / 2 )
+    else
+      (@item.price * @count) / 2
+    end
   end
 
   def buy_3_get_1_free
