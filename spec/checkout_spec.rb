@@ -18,7 +18,8 @@ RSpec.describe Checkout do
     }
     let(:discounts) { 
       {
-        apples: { name: 'two_for_one' },
+        apple: { name: 'two_for_one' },
+        orange: { name: 'two_for_one' },
         pear: { name: 'two_for_one' },
         banana: { name: 'half_price' },
         pineapple: { name: 'half_price', restrict: 1 },

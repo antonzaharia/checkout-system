@@ -1,10 +1,13 @@
 class BasketItem
   def initialize(item)
     @item = item
-    @count = count
+    @count = 1
   end
+  attr_reader :item
+  attr_accessor :count
 
   def discounted_price
+    item.price
   end
 
   def two_for_one

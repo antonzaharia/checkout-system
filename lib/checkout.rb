@@ -41,7 +41,7 @@ class Checkout
     # end
 
     # total
-    baskte.calculate_total
+    basket.calculate_total
   end
 
   private
