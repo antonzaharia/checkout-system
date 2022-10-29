@@ -7,7 +7,11 @@ class BasketItem
   attr_accessor :count
 
   def discounted_price
-    item.price
+    if @item.discount&.key?(:name)
+      self.send(@item.discount[:name])
+    else
+      @item.price * @count
+    end
   end
 
   def two_for_one
