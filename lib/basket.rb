@@ -6,4 +6,7 @@ class Basket
 
   def add(item)
   end
+
+  def calculate_total
+  end
 end
