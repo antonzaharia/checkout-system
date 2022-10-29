@@ -1,9 +1,11 @@
 class Checkout
   attr_reader :prices
+  attr_accessor :discounts
   private :prices
 
-  def initialize(prices)
+  def initialize(prices, discounts)
     @prices = prices
+    @discounts = discounts
   end
 
   def scan(item)

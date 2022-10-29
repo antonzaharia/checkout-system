@@ -5,7 +5,7 @@ RSpec.describe Checkout do
   describe '#total' do
     subject(:total) { checkout.total }
 
-    let(:checkout) { Checkout.new(pricing_rules) }
+    let(:checkout) { Checkout.new(pricing_rules, discounts) }
     let(:pricing_rules) {
       {
         apple: 10,
@@ -16,9 +16,19 @@ RSpec.describe Checkout do
         mango: 200
       }
     }
+    let(:discounts) { 
+      {
+        apples: { name: 'two_for_one' },
+        pear: { name: 'two_for_one' },
+        banana: { name: 'half_price' },
+        pineapple: { name: 'half_price', restrict: 1 },
+        mango: { name: 'buy_3_get_1_free' }
+      }
+    }
 
     context 'when no offers apply' do
       before do
+        checkout.discounts = {}
         checkout.scan(:apple)
         checkout.scan(:orange)
       end
