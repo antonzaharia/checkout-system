@@ -15,6 +15,11 @@ class BasketItem
   end
 
   def two_for_one
+    if @count % 2 == 0
+      (((@count - 1 ) / 2 ) * @item.price ) + @item.price
+    else
+      (@count / 2 ) * @item.price
+    end
   end
 
   def half_price
