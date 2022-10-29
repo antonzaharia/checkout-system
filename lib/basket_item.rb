@@ -32,5 +32,8 @@ class BasketItem
   end
 
   def buy_3_get_1_free
+    total = 0
+    @count.times { |i| total += @item.price unless i % 4 == 0 }
+    total
   end
 end
