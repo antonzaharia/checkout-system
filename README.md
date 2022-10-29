@@ -4,7 +4,7 @@ In this repository is a Checkout flow implemented in OOP.
 
 ### TODOs:
 
-- [x] Create a Item class
+- [x] Create an Item class
   - Takes in `name:string`, `price:integer` and optionally `discount:object`
   - SHould be able to read and write it's attributes
 - [ ] Create a Basket class
