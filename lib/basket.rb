@@ -18,6 +18,9 @@ class Basket
   end
 
   def calculate_total
+    total = 0
+    @basket_items.each { |basket_item| total += basket_item.discounted_price }
+    total
   end
 
   def find_item(item_name)
