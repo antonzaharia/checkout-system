@@ -1,5 +1,4 @@
 require_relative './basket_item'
-require 'pry'
 
 class Basket
   def initialize(items)
